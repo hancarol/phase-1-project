@@ -24,5 +24,27 @@ a {
 #slash {
   text-decoration: none;
   font-size: 25px;
-  position: relative;
+}
+
+#weather-description {
+  text-transform: capitalize;
+}
+
+.card {
+  background: linear-gradient(-225deg, #fffeff 0%, #d7fffe 100%);
+}
+
+.main-temp {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 50px;
+}
+
+.main-data {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.container {
+  margin-top: 60px;
 }
