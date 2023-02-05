@@ -1,3 +1,28 @@
 body {
-  background-color: brown;
+  font-family: "PT Mono", monospace;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  font-size: 25px;
+}
+
+#slash {
+  text-decoration: none;
+  font-size: 25px;
+  position: relative;
 }
