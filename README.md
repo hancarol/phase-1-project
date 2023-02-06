@@ -12,4 +12,4 @@ This application displays day and time, 5-day forecast, current forecast, wind, 
 
 # Features
 
-This application allows you do search any cities to get current forecast and it also 5-day forecast. There are two buttons to search for forecast, you can write in a specific city or you can click the "current location" button to search the forecast based on your location.
+This application allows you to search any cities to get current forecast and 5-day forecast. There are two buttons to search for forecast, you can write in a specific city or you can click the "current location" button to search the forecast based on your location. For the current temperature, you have the option to see the temperature in celsius or farenheit.
