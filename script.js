@@ -27,7 +27,7 @@ function time() {
 time();
 
 function showWeather(response) {
-  celsiusTemperature = Math.round(response.data.main.temp);
+  let celsiusTemperature = Math.round(response.data.main.temp);
   let iconElement = document.querySelector("main-icon");
   let windSpeed = response.data.wind.speed;
   let windSpeedMetric = (windSpeed * 3600) / 1000;
