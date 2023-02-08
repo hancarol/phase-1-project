@@ -44,11 +44,39 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastWeather = `<div class="row">`;
+  forecast.forEach(function (day, index) {
+    if (index < 5) {
+      forecast =
+        forecastWeather +
+        `<div class="col-2">
+  <p>${formatDay(day.dt)}</p>
+                  <img src="http://openweathermap.org/img/wn/${
+                    day.weather[0].icon
+                  }@2x.png" alt="weather-image" /> 
+                  
+                  <p>${day.weather[0].main}</p>
+                  <p>${Math.round(day.temp.min)}°/${Math.round(
+          day.temp.max
+        )}°</p>
+                </div>
+              `;
+    }
+  });
+  forecastWeather = forecastWeather + `</div>`;
+  forecastElement.innerText = forecastWeather;
 }
 
 function getForecast(coordinates) {
   let apiKey = "7e320e70b095384fdeef1e450eb06132";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 function showCity(city) {
   let apiKey = "7e320e70b095384fdeef1e450eb06132";
@@ -61,3 +89,8 @@ function submitCity(event) {
   let city = document.querySelector("#search").value;
   showCity(city);
 }
+
+let searchCity = document.querySelector("#search-location");
+searchCity.addEventListener("submit", submitCity);
+
+showCity("new york");
