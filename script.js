@@ -26,6 +26,13 @@ function time() {
 }
 time();
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function showWeather(response) {
   let celsiusTemperature = Math.round(response.data.main.temp);
   let iconElement = document.querySelector("main-icon");
@@ -89,6 +96,15 @@ function submitCity(event) {
   let city = document.querySelector("#search").value;
   showCity(city);
 }
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsius);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+let currentLocation = document.querySelector("#current-location");
+currentLocation.addEventListener("click", getCurrentLocation);
 
 let searchCity = document.querySelector("#search-location");
 searchCity.addEventListener("submit", submitCity);
