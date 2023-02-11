@@ -22,7 +22,7 @@ function time() {
   ];
   let day = days[now.getDay()];
 
-  h2.innerHTML = `${day} ${hours}:${minutes}`;
+  h2.innerText = `${day} ${hours}:${minutes}`;
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -70,13 +70,13 @@ function showWeather(response) {
   let windSpeed = response.data.wind.speed;
   let windSpeedMetric = (windSpeed * 3600) / 1000;
 
-  document.querySelector("#location").innerHTML = response.data.name;
+  document.querySelector("#location").innerText = response.data.name;
   document.querySelector(
     "#main-temperature"
-  ).innerHTML = `${celsiusTemperature}`;
-  document.querySelector("#wind-speed").innerHTML = Math.round(windSpeedMetric);
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#weather-description").innerHTML =
+  ).innerText = `${celsiusTemperature}`;
+  document.querySelector("#wind-speed").innerText = Math.round(windSpeedMetric);
+  document.querySelector("#humidity").innerText = response.data.main.humidity;
+  document.querySelector("#weather-description").innerText =
     response.data.weather[0].main;
   iconElement.setAttribute(
     "src",
@@ -118,7 +118,7 @@ function displayFahrenheit(event) {
   celsiusLink.classList.remove("active");
 
   let displayFahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  document.querySelector("#main-temperature").innerHTML = Math.round(
+  document.querySelector("#main-temperature").innerText = Math.round(
     displayFahrenheitTemperature
   );
 }
@@ -127,7 +127,7 @@ function displayCelsius(event) {
   event.preventDefault();
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
-  document.querySelector("#main-temperature").innerHTML =
+  document.querySelector("#main-temperature").innerText =
     Math.round(celsiusTemperature);
 }
 
