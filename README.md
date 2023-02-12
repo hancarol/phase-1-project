@@ -8,7 +8,7 @@ This application pulls data from an API and gives you real-time weather for the 
 
 # Display
 
-This application displays day and time, 5-day forecast, current forecast, wind, and humidity in real time.
+This application displays day and time, 5-day forecast, current forecast, wind, and humidity in real time and in imperial system.
 
 # Features
 
