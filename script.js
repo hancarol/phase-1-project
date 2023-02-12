@@ -134,10 +134,10 @@ function displayCelsius(event) {
 }
 
 let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsius);
+celsiusLink.addEventListener("mouseover", displayCelsius);
 
 let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
+fahrenheitLink.addEventListener("mouseover", displayFahrenheit);
 
 let searchCity = document.querySelector("#search-location");
 searchCity.addEventListener("submit", submitCity);
